@@ -1,1 +1,0 @@
-import{V2 as o}from"./v2.mjs";export class Pheromone{constructor(o,e){this.pos=o.copy(),this.strength=e}}export default{Pheromone};

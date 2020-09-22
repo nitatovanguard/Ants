@@ -1,1 +1,0 @@
-import{V2 as o}from"./v2.mjs";export class Base{constructor(s,t,e){this.pos=new o(s,t),this.antn=e,this.foodn=0,this.size=25}addFood(o){this.foodn+=o,console.log(this.foodn)}}export default{Base};
