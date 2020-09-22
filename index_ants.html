@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>aShader</title>
+  <!--  <script type="text/javascript" src="./node_modules/dat.gui/build/dat.gui.min.js"></script>-->
+</head>
+
+<style>
+
+  body {
+    background-color: black;
+  }
+  .flex-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .flex-container > div {
+    margin: 1%;
+    padding: 0px;
+    font-size: 30px;
+    width: 200px;
+    height: 200px;
+  }
+</style>
+
+<body>
+<canvas id='mainCanvas'
+        style='position: absolute; left: 0px; top: 0px; background-color: moccasin;'/>
+<!--<div id="mainDiv" style='position: absolute; top: 0px; left: 0px; width: 100px; height: 100px'></div>-->
+<!--  <div id="mainDiv" class="flex-container" style="position: absolute; left: 0px; top: 0px; width:100%;  z-index: 1"> </div>-->
+</body>
+
+<script defer="defer" type="module">
+
+  import {preview,activate} from './modules/ants.mjs';
+  activate(document.getElementById("mainCanvas"))
+
+
+
+</script>
+
+</html>

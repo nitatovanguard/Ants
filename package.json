@@ -1,0 +1,28 @@
+{
+    "name": "nitatohtml",
+    "devDependencies": {
+        "concurrently": "^5.2.0",
+        "eslint": "^7.3.1",
+        "eslint-config-airbnb-base": "^14.2.0",
+        "eslint-plugin-import": "^2.22.0",
+        "foreach-cli": "^1.8.1",
+        "gh-pages": "latest",
+        "html-minifier-terser": "latest",
+        "terser": "^4.7.0",
+        "mocha": "^8.0.1"
+    },
+    "scripts": {
+        "test": "mocha",
+        "preminify": "bash -c 'rm -rf dist; mkdir -p dist/modules'",
+        "lint": "eslint modules/* test/*",
+        "lint-fix": "eslint --fix modules/* test/*",
+        "minify-html": "html-minifier-terser --collapse-whitespace  --quote-character \\' --remove-comments --remove-optional-tags --remove-redundant-attributes --remove-script-type-attributes --remove-tag-whitespace --use-short-doctype --minify-css true --minify-js true -o dist/index.html index.html",
+        "minify-js": "foreach -g \"modules/*.mjs\" -x \"terser --mangle --compress --ecma 2016 --module -o dist/#{path} #{path}\"",
+        "minify": "npm run minify-html & npm run minify-js",
+        "predeploy": "npm run minify",
+        "deploy": "gh-pages -d dist -b master -m 'npm deloy update' -r git@github.com:nitatovanguard/nitatovanguard.github.io.git"
+    },
+    "dependencies": {
+        "dat.gui": "^0.7.7"
+    }
+}
