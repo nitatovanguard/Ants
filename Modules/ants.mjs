@@ -6,12 +6,11 @@
 import { createResizing2dCanvas, createFullscreen2dCanvas } from './canvastools.mjs';
 import { World } from './world.mjs';
 import { Ant } from './antclass.mjs';
-import { V2 } from './v2.mjs';
-import * as dat from '../node_modules/dat.gui/build/dat.gui.module.js';
+import * as dat from './dat.gui.module.mjs';
 
 let world;
 const params = {
-  ants: 1,
+  ants: 10,
   foodPhDecayRate: 0.997,
   nestPhDecayRate: 0.997,
 };

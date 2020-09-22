@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>aShader</title>
+  <!--  <script type="text/javascript" src="./node_modules/dat.gui/build/dat.gui.min.js"></script>-->
+</head>
+
+<style>
+
+  body {
+    background-color: black;
+  }
+  
+</style>
+
+<body>
+<canvas id='mainCanvas'
+        style='position: absolute; left: 0px; top: 0px; background-color: moccasin;'/>
+</body>
+
+<script defer="defer" type="module">
+  import {activate} from './modules/ants.mjs';
+  activate(document.getElementById("mainCanvas"))
+</script>
+
+</html>

@@ -9,7 +9,8 @@
         "gh-pages": "latest",
         "html-minifier-terser": "latest",
         "terser": "^4.7.0",
-        "mocha": "^8.0.1"
+        "mocha": "^8.0.1",
+        "copyfiles": "^2.3.0"
     },
     "scripts": {
         "test": "mocha",
@@ -19,8 +20,9 @@
         "minify-html": "html-minifier-terser --collapse-whitespace  --quote-character \\' --remove-comments --remove-optional-tags --remove-redundant-attributes --remove-script-type-attributes --remove-tag-whitespace --use-short-doctype --minify-css true --minify-js true -o dist/index.html index.html",
         "minify-js": "foreach -g \"modules/*.mjs\" -x \"terser --mangle --compress --ecma 2016 --module -o dist/#{path} #{path}\"",
         "minify": "npm run minify-html & npm run minify-js",
-        "predeploy": "npm run minify",
-        "deploy": "gh-pages -d dist -b master -m 'npm deloy update' -r git@github.com:nitatovanguard/nitatovanguard.github.io.git"
+        "copy-dependencies": "terser --mangle --compress --ecma 2016 --module -o dist/modules/dat.gui.module.mjs node_modules/dat.gui/build/dat.gui.module.js",
+        "predeploy": "npm run minify & npm run copy-dependencies",
+        "deploy": "gh-pages -d dist -b master -m 'npm deploy update' -r git@github.com:nitatovanguard/nitatovanguard.github.io.git"
     },
     "dependencies": {
         "dat.gui": "^0.7.7"
